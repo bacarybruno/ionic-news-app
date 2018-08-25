@@ -1,0 +1,168 @@
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+// Preloader
+.loading_spinner {
+    width: 30%;
+    display: block;
+    margin: 25rem auto;
+    text-align: center;
+    ion-spinner {
+        height: 50px;
+        width: 45px;
+    }
+}
+
+.nothing {
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.7rem;
+        color: rgba(51, 50, 49, .9);
+        text-align: center;
+    }
+}
+
+// Side Menu
+ion-menu {
+    ion-label {
+        font-size: inherit !important;
+    }
+    .header-md::after {
+        background-image: none;
+    }
+    .menu-inner {
+        // width: 330px !important;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    ion-content {
+        // background-color: #cc9933 !important;
+    }
+    .scroll-content {
+        margin-top: 5rem;
+    }
+    .search {
+        width: 100%;
+        display: block;
+        // border-bottom: 1px solid rgba(0, 0, 0, .4);
+        margin-left: 2rem;
+        ion-icon {
+            vertical-align: middle;
+            color: #c8c8c8;
+            font-size: 2rem;
+        }
+        p {
+            display: inline-block;
+            padding-left: 0.5rem;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.7rem;
+            color: #c8c8c8;
+            margin-bottom: 0.7rem;
+        }
+    }
+    ion-list {
+        margin: 1rem 0 0 0.5rem !important;
+        ion-icon {
+            vertical-align: middle;
+            font-size: 2.7rem;
+            margin-right: 2rem;
+        }
+        .item-block {
+            // background-color: #cc9933;
+        }
+        ion-label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.8rem;
+        }
+    }
+}
+
+// Article
+.articles {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    .img_holder {
+        width: 100%;
+        max-height: 35vh;
+        overflow: hidden;
+    }
+    .content {
+        padding: 0rem 2rem 0rem;
+        border-bottom: 2px solid #e3e3e3;
+        h3 {
+            font-family: 'Roboto', serif;
+            font-weight: bold;
+        }
+        .txt {
+            color: #666;
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+        }
+        .footer {
+            p {
+                display: inline-block;
+                vertical-align: super;
+                color: #999;
+                font-size: 1.4rem;
+            }
+            p.comments {
+                color: #ccc;
+                margin-left: 1rem;
+            }
+            .icons {
+                display: inline-block;
+                float: right;
+                margin-top: 1rem;
+                ion-icon {
+                    color: #7399b3;
+                    font-size: 2.4rem;
+                    margin-right: 2rem;
+                }
+                ion-icon.hightlight {
+                    background: #7399b3;
+                }
+            }
+        }
+    }
+    &:last-child {
+        .content {
+            border-bottom: none;
+        }
+    }
+}
+
+.header-ios .toolbar-ios:last-child .toolbar-background-ios {
+    border-width: 0 0 0 0;
+}
+
+.header-ios .search {
+    margin-top: 20px;
+}
+
+ion-nav {
+    width: 100%;
+    max-width: 100% !important;
+}
+
+ion-title img {
+    max-width: 275px;
+}
+
+.swiper-pagination-bullet-active {
+    background: color($colors, danger) !important;
+}
+
+super-tab-button {
+    min-width: auto !important;
+}

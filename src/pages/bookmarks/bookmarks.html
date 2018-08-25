@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar color="danger">
+        <ion-title>Sauvegardes</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+    <div class="nothing" [hidden]="has_bookmark">
+        <p>Vous n'avez aucun article enregistré pour le moment</p>
+    </div>
+
+    <section [hidden]="!has_bookmark">
+        <div class="bookmark" *ngFor="let item of bookmarks" (click)="openArticle($event, item)">
+            <div class="content">
+                <h3>{{ item.title.rendered.decodeHtml() }}</h3>
+                <div class="txt" [innerHTML]="item.excerpt.rendered.decodeHtml().trunc(100)"></div>
+            </div>
+
+            <div class="img_holder">
+                <img src="{{ item.banner }}">
+            </div>
+
+            <div class="footer">
+                <p class="date">{{ item.modified | date: "d MMM" }}</p>
+                <p class="comments">{{ item.comments[0] ? item.comments[0].length : 0 }} Commentaires</p>
+                <div class="icons">
+                    <ion-icon (click)="remove(item)" [name]="myIcon[item.id]?myIcon[item.id] : myIcon[item.id] = 'ios-bookmark'"></ion-icon>
+                    <ion-icon name="md-share" (click)="share(item)" tappable></ion-icon>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-split-pane>
+    <ion-menu [content]="content">
+        <ion-header menuClose>
+            <div class="search" tappable (click)="search()">
+                <ion-icon name="md-search"></ion-icon>
+                <p>Rechercher</p>
+            </div>
+
+            <ion-list no-lines>
+
+                <ion-item-group>
+                    <ion-item-divider color="light">General</ion-item-divider>
+                    <button ion-item (click)="settings()">
+                        <ion-icon name="settings" item-start></ion-icon>
+                        Paramètres
+                    </button>
+                    <button ion-item (click)="feedback()">
+                        <ion-icon name="chatboxes" item-start></ion-icon>
+                        Nous Contacter
+                    </button>
+                </ion-item-group>
+
+            </ion-list>
+        </ion-header>
+
+
+    </ion-menu>
+
+    <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+    <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main></ion-nav>
+
+</ion-split-pane>

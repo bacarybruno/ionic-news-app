@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar color="danger">
+        <ion-title>Commentaire</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only [disabled]="!isValid()" (click)="send()">
+                <ion-icon name="md-send"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="form">
+        <ion-item>
+            <ion-label floating>Nom</ion-label>
+            <ion-input type="text" [(ngModel)]="name" autofocus></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="text" [(ngModel)]="email"></ion-input>
+        </ion-item>
+    </div>
+
+    <ion-item>
+        <ion-label floating>Commentaire</ion-label>
+        <ion-textarea [(ngModel)]="comment"></ion-textarea>
+    </ion-item>
+</ion-content>

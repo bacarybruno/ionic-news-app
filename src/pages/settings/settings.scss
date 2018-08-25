@@ -1,0 +1,41 @@
+page-settings {
+    .item-inner {
+        border-bottom: 0 !important;
+    }
+    .scroll-content {
+        background: rgba(0, 0, 0, .02);
+    }
+    section {
+        border-top: 1px solid rgba(32, 33, 31, .6);
+        padding: 1.5rem;
+        // margin-bottom: 1rem;
+        .block+.block {
+            margin-top: 2rem;
+        }
+        &:first-child {
+            border: none;
+        }
+        h4 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+            margin-bottom: 2rem;
+            color: #cc9933;
+        }
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.7rem;
+            margin: 0;
+            margin-bottom: 0.5rem;
+            color: rgba(32, 33, 31, .9);
+        }
+        p {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.6rem;
+            margin: 0;
+            color: rgba(32, 33, 31, .9);
+            opacity: .5;
+        }
+    }
+}

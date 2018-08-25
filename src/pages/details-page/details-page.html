@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-navbar color="danger">
+        <ion-title>{{ news.category.name | capitalize }}</ion-title>
+        <ion-buttons left>
+            <button ion-button icon-only (click)="dismiss()">
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="comments()">
+        		<ion-icon name="ios-chatboxes-outline"></ion-icon>
+      		</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <!-- Article -->
+    <div class="article">
+        <div class="header">
+            <h3>{{ news.title.rendered.decodeHtml() }}</h3>
+            <h4>Par {{ news.author.name }}</h4>
+            <h5>Dernière mise à jour le: {{ news.modified_gmt | date: "short" }}</h5>
+        </div>
+        <div class="img_holder">
+            <img src="{{ news.banner }}">
+        </div>
+        <div class="content">
+            <div [innerHTML]="news.content.rendered.decodeHtml() | keepHtml"></div>
+        </div>
+    </div>
+    <!-- END article -->
+
+    <ion-list *ngIf="hasSimilar">
+        <ion-item-group>
+            <ion-item-divider color="light">
+                <h3>Articles similaires</h3>
+            </ion-item-divider>
+        </ion-item-group>
+        <ion-slides #slider id="ionSlider" loop="true" pager="true" spaceBetween="10" centeredSlides="true">
+            <ion-slide *ngFor="let item of similar" (click)="openArticle($event, item)" class="articles">
+                <div class="img_holder">
+                    <img [src]="item.banner" />
+                </div>
+                <div class="content">
+                    <h3>{{ item.title.rendered.decodeHtml() }}</h3>
+                    <div class="txt" [innerHTML]="item.excerpt.rendered.decodeHtml().trunc(100)"></div>
+                    <div class="footer">
+                        <p class="date">{{ item.modified | date: "d MMM" }}</p>
+                        <p class="comments">{{ item.comments[0] ? item.comments[0].length : 0 }} Commentaires</p>
+                        <div class="icons"></div>
+                    </div>
+                </div>
+            </ion-slide>
+        </ion-slides>
+    </ion-list>
+</ion-content>

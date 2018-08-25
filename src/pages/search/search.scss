@@ -1,0 +1,40 @@
+page-search {
+    ion-grid.search {
+        background-color: color($colors, danger);
+    }
+    ion-searchbar {
+        padding: 0 !important;
+        background-color: transparent !important;
+    }
+    .search {
+        border-bottom: 1px solid #c8c8c8;
+        ion-icon {
+            color: white;
+            font-size: 2.5rem;
+            vertical-align: middle;
+        }
+        ion-col[width-20] {
+            padding: 1em 0 1rem 1rem;
+            max-width: 15%;
+        }
+        ion-col[width-10] {
+            padding: 1em 0 1rem 5rem;
+        }
+        ion-col[width-67] {
+            ion-input {
+                display: inline-block;
+                width: 90%;
+                font-size: 1.6rem;
+            }
+        }
+    }
+    .icons {
+        min-width: 75px;
+    }
+    .date {
+        min-width: 50px;
+    }
+    .comments {
+        min-width: 115px;
+    }
+}

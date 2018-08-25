@@ -1,0 +1,13 @@
+page-home {
+    .header-md::after,
+    .tabs-md[tabsPlacement="top"]>.tabbar::after,
+    .footer-md::before,
+    .tabs-md[tabsPlacement="bottom"]>.tabbar::before {
+        background-image: url("") !important;
+    }
+    ion-content {
+        .scroll-content {
+            overflow: hidden;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar color="danger">
+        <ion-title>Commentaires</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+    <div class="nothing" *ngIf="!has_comments">
+        <p>Cet article n'a pas encore de commentaire. Soyez le premier à commenter cet article.</p>
+    </div>
+
+    <p class="comment_count" *ngIf="has_comments">
+        <ion-icon name="md-chatbubbles"></ion-icon>&nbsp; {{ comments.length }} commentaires
+    </p>
+
+    <ion-list no-lines *ngFor="let comment of comments" [hidden]="!has_comments">
+        <div class="comment">
+            <p class="username">
+                {{ comment.author_name }}
+                <span>{{ comment.date | date: "longDate" }}</span>
+            </p>
+            <div style="margin-top:-1rem;" [innerHTML]="comment.content.rendered.decodeHtml() | keepHtml"></div>
+        </div>
+        <!-- END .comment -->
+    </ion-list>
+
+    <ion-fab bottom right (click)="newComment()">
+        <button ion-fab mini color="danger">
+			<ion-icon name="md-create"></ion-icon>
+		</button>
+    </ion-fab>
+
+</ion-content>

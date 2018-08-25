@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar color="danger">
+        <button ion-button menuToggle>
+    	  <ion-icon name="menu"></ion-icon>
+  	    </button>
+        <ion-title><img src="assets/img/logo.png" style="width:60%;margin-top:0.5rem;"></ion-title>
+
+        <ion-buttons end>
+            <button ion-button icon-only (click)="openBookmarks($event)">
+                <ion-icon name="bookmarks"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <super-tabs [scrollTabs]="true" toolbarColor="light" toolbarBackground="danger" indicatorColor="light" [config]="{ sideMenu: 'left' }">
+        <super-tab [root]="tabRoot" [title]="category.name" [rootParams]="{id: category.id}" *ngFor="let category of categories"></super-tab>
+    </super-tabs>
+</ion-content>

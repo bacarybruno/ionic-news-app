@@ -1,0 +1,42 @@
+<ion-content>
+    <ion-grid class="search">
+        <ion-row>
+            <ion-col width-20 navPop>
+                <ion-icon name="md-arrow-back"></ion-icon>
+            </ion-col>
+            <ion-col width-67>
+                <ion-searchbar #input type="search" placeholder="Terme de recherche" showCancelButton="true" [(ngModel)]="query" (ionInput)="search()"></ion-searchbar>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-list no-lines>
+        <!-- Articles -->
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 class="articles" *ngFor="let item of news" (click)="openArticle($event, item)">
+                    <div class="img_holder">
+                        <img [src]="item.banner" />
+                    </div>
+                    <div class="content">
+                        <h3>{{ item.title.rendered.decodeHtml() }}</h3>
+                        <div class="txt" [innerHTML]="item.excerpt.rendered.decodeHtml().trunc(100)"></div>
+                        <div class="footer">
+                            <p class="date">{{ item.modified | date: "d MMM" }}</p>
+                            <p class="comments">{{ item.comments[0] ? item.comments[0].length : 0 }} Commentaires</p>
+                            <div class="icons">
+                                <ion-icon (click)="save(item)" [name]="myIcon[item.id]?myIcon[item.id] : myIcon[item.id] = 'ios-bookmark-outline'"></ion-icon>
+                                <ion-icon name="md-share" (click)="share(item)" tappable></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content loadingText="Chargement..."></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+
+        <!-- END articles -->
+    </ion-list>
+</ion-content>

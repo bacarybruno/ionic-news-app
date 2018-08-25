@@ -1,0 +1,13 @@
+page-popover {
+    .scroll-content {
+        padding-left: 1rem;
+        .item-block {
+            font-family: 'Roboto', sans-serif;
+            color: #1a1a1a;
+            margin-top: 1rem;
+        }
+        ion-list[no-lines] {
+            margin-bottom: inherit;
+        }
+    }
+}

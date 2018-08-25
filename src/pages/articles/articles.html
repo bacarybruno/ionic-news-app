@@ -1,0 +1,95 @@
+<!--
+  Generated template for the ArticlesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content #container>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Actualiser" refreshingSpinner="circles" refreshingText="Chargement...">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <ion-list no-lines>
+
+        <div class="fancy-bg" *ngIf="!news">
+            <div class="fancy-bg-item">
+                <div class="placeholder img-placeholder"></div>
+
+                <div class="title-placeholders">
+                    <div class="placeholder title-placeholder"></div>
+                    <div class="placeholder title-placeholder"></div>
+                    <div class="placeholder title-placeholder"></div>
+                </div>
+
+                <div class="text-placeholders">
+                    <div class="placeholder text-placeholder"></div>
+                    <div class="placeholder text-placeholder"></div>
+                    <div class="placeholder text-placeholder"></div>
+                </div>
+
+
+                <div class="addons-placeholders">
+                    <div class="placeholder date-placeholder"></div>
+                    <div class="placeholder comms-placeholder"></div>
+                    <div class="placeholder icons-placeholder"></div>
+                </div>
+            </div>
+        </div>
+
+        <ion-list>
+            <ion-row>
+                <ion-col col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 *ngFor="let item of news; let $first = first;">
+                    <div class="articles" *ngIf="$first" tappable (tap)="openArticle($event, item)">
+                        <div class="img_holder">
+                            <img [src]="item.banner" />
+                        </div>
+                        <div class="content">
+                            <h3>{{ item.title.rendered.decodeHtml() }}</h3>
+                            <div class="txt" [innerHTML]="item.excerpt.rendered.decodeHtml().trunc(100)"></div>
+                        </div>
+                    </div>
+                    <button ion-item (click)="openArticle($event, item)" (press)="options($event, item)" *ngIf="!$first">
+                        <ion-thumbnail item-start>
+                            <img [defaultImage]="defaultThumbPlaceholder" [errorImage]="errorThumbPlaceholder" [lazyLoad]="item.thumbnail" style="width: 100px; height: 100px;" [scrollObservable]="container.ionScroll">
+                        </ion-thumbnail>
+                        <h2 text-wrap>{{ item.title.rendered.decodeHtml().trunc(60) }}</h2>
+                        <p>
+                            <ion-badge color="danger">{{ item.adTag }}</ion-badge><span *ngIf="item.adTag"> • </span>{{ item.modified | amLocale:'fr' | amTimeAgo }}
+                        </p>
+                    </button>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+
+        <!-- <ion-grid>
+            <ion-row>
+                <ion-col col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 class="articles" *ngFor="let item of news" tappable (click)="openArticle($event, item)">
+                    <div class="img_holder">
+                        <img [src]="item.banner" />
+                    </div>
+                    <div class="content">
+                        <h3>{{ item.title.rendered.decodeHtml() }}</h3>
+                        <div class="txt" [innerHTML]="item.excerpt.rendered.decodeHtml().trunc(100)"></div>
+                        <div class="footer">
+                            <p class="date">{{ item.modified | date: "d MMM" }}</p>
+                            <p class="comments">{{ item.comments[0] ? item.comments[0].length : 0 }} Commentaires</p>
+                            <div class="icons">
+                                <ion-icon (click)="save(item)" [name]="myIcon[item.id]?myIcon[item.id] : myIcon[item.id] = 'ios-bookmark-outline'" tappable></ion-icon>
+                                <ion-icon name="md-share" (click)="share(item)" tappable></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid> -->
+
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content loadingText="Chargement..."></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+
+        <!-- END articles -->
+    </ion-list>
+</ion-content>

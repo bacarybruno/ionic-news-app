@@ -1,0 +1,53 @@
+page-comments {
+    .icons {
+        min-width: 75px;
+    }
+    .date {
+        min-width: 50px;
+    }
+    .comments {
+        min-width: 115px;
+    }
+    .scroll-content {
+        padding-left: 2rem;
+        ion-icon {
+            vertical-align: middle;
+        }
+    }
+    p.comment_count {
+        color: #000;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .comment {
+        border-top: 1px solid #c8c8c8;
+        p {
+            padding-right: 2rem;
+            line-height: 2.2rem;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        p.username {
+            color: #000;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-transform: capitalize;
+            span {
+                display: block;
+                font-size: 1.3rem;
+                font-weight: normal;
+                color: #c8c8c8;
+            }
+        }
+    }
+    .fab[mini] {
+        width: 60px;
+        height: 60px;
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.14), 0 1px 5px rgba(0, 0, 0, 0.1);
+    }
+    .fab {
+        ion-icon {
+            color: #fff;
+        }
+    }
+}

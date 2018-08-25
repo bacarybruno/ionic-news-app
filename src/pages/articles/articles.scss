@@ -1,0 +1,104 @@
+page-articles {
+    ion-col {
+        border-bottom: 1px solid #dedede;
+    }
+    .icons {
+        min-width: 75px;
+    }
+    .date {
+        min-width: 50px;
+    }
+    .comments {
+        min-width: 115px;
+    }
+    ion-img {
+        min-width: 100%;
+        min-height: 230px;
+    }
+    ion-content {
+        .scroll-content {
+            overflow-y: scroll !important;
+        }
+    }
+    // fancy-bg
+    .fancy-bg-item {
+        padding: 10px;
+        background: #fff;
+        border-bottom: 1px solid;
+        border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+        border-radius: 3px;
+        margin: 0 auto;
+        min-height: 200px;
+    }
+    @keyframes placeHolderShimmer {
+        0% {
+            background-position: -800px 0
+        }
+        100% {
+            background-position: 800px 0
+        }
+    }
+    .placeholder {
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-name: placeHolderShimmer;
+        animation-timing-function: linear;
+        background: #f6f7f8;
+        background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+        background-size: 800px 104px;
+        position: relative;
+    }
+    .title-placeholders {
+        margin-top: 10px;
+        padding: 20px;
+        padding-bottom: 0;
+    }
+    .title-placeholders div {
+        margin-bottom: 5px;
+        height: 12px;
+    }
+    .img-placeholder {
+        height: 192px;
+    }
+    .title-placeholder:nth-child(3) {
+        width: 80%;
+    }
+    .text-placeholder {
+        height: 8px;
+    }
+    .text-placeholders {
+        padding: 20px;
+        padding-bottom: 0px;
+    }
+    .text-placeholders div {
+        margin-bottom: 5px;
+    }
+    .text-placeholder:nth-child(1) {
+        width: 75%;
+    }
+    .text-placeholder:nth-child(2) {
+        width: 98%;
+    }
+    .text-placeholder:nth-child(3) {
+        width: 40%;
+    }
+    .addons-placeholders {
+        padding: 20px;
+    }
+    .addons-placeholders div {
+        margin-bottom: 5px;
+        margin-right: 5px;
+        height: 8px;
+        display: inline-block;
+    }
+    .date-placeholder {
+        width: 15%;
+    }
+    .comms-placeholder {
+        width: 50%;
+    }
+    .icons-placeholder {
+        width: 25%;
+    }
+}

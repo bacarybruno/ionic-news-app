@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-navbar color="danger">
+        <ion-title>Paramètres</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <section>
+        <div class="block">
+            <h4>Préferences</h4>
+            <h3>Notifications</h3>
+            <p>
+                <ion-item>
+                    <ion-label>Recevoir des notifications</ion-label>
+                    <ion-toggle [(ngModel)]="notification" (ionChange)="updateItem()"></ion-toggle>
+                </ion-item>
+            </p>
+        </div>
+        <div class="block">
+            <h3>Mise à jour</h3>
+            <p>
+                <ion-item>
+                    <ion-label>Automatique</ion-label>
+                    <ion-toggle [(ngModel)]="update" disabled (ionChange)="updateItem()"></ion-toggle>
+                </ion-item>
+            </p>
+        </div>
+        <div class="block">
+            <h3>Nom</h3>
+            <p>sunubuzz</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="block">
+            <h4>A propos de l'application</h4>
+            <h3>Version</h3>
+            <p>1.4.8</p>
+        </div>
+        <div class="block">
+            <h3>Nom</h3>
+            <p>SunuBuzz</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="block">
+            <h4>Legal</h4>
+            <h3>Mentions légales</h3>
+            <p>
+                <a href="https://sunubuzzsn.com/mentions-legales/">Voir nos mentions légales.</a>
+                <p>
+        </div>
+    </section>
+
+    <section>
+        <div class="block">
+            <h4>Développement</h4>
+            <h3>A propos</h3>
+            <p>
+                L'application sunubuzz est un service offert par le site www.sunubuzzsn.com.
+            </p>
+        </div>
+    </section>
+
+</ion-content>

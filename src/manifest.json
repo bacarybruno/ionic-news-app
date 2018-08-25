@@ -1,0 +1,13 @@
+{
+    "name": "SunuBuzzSN",
+    "short_name": "sunubuzz",
+    "start_url": "index.html",
+    "display": "standalone",
+    "icons": [{
+        "src": "assets/imgs/logo.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }],
+    "background_color": "#df3535",
+    "theme_color": "#df3535"
+}
